@@ -112,3 +112,10 @@ export function aufgabe03 (args) {
     return result.join("")                                        
   }
   
+  export function aufgabe09 (args) {
+    const input = args
+    
+    if(input.length === 6) return true
+    if(input.length <= 6 || 6 <= input.length) return false
+  
+  }
