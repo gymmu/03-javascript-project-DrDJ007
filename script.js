@@ -111,4 +111,10 @@ export function aufgabe03 (args) {
     }
     return result.join("")                                        
   }
-  
+
+  export function aufgabe11 (args) {
+    const input = args
+    
+    if(input.length !== 1) return null
+    return input[0].charCodeAt(0)
+  }
