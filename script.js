@@ -66,7 +66,7 @@ export function aufgabe03 (args) {
     return count
   }
 
-  export function aufgabe05 (args) {
+  export function aufgabe05(args) {
     const input = args
     
     for (let i = 0; i < input.length; i++) {
@@ -74,6 +74,23 @@ export function aufgabe03 (args) {
      
       if (65 <= currentAscii && currentAscii <=90) return true
       
+    }
+    return false
+  }
+
+  export function aufgabe06(args) {
+    const input = args
+  
+    if (input.length <= 0) return false
+    
+    for (let i = 0; i < input.length; i++) {
+      const ascii = input[i].charCodeAt(0)
+  
+      if(0 <= ascii && ascii <=47) return true
+      else if (58 <= ascii && ascii <= 64) return true
+      else if (91 <= ascii && ascii <= 96) return true
+      else if (123 <= ascii && ascii <= 127) return true
+    
     }
     return false
   }
