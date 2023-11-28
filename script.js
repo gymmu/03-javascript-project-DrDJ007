@@ -52,44 +52,28 @@ export function aufgabe03 (args) {
 
   }
 
-  export function aufgabe04 (args) {
+  export function aufgabe04(args) {
     const input = args
-    const result = []
-    let count = 1 
-
-
+    let count = 1
+    
     for (let i = 0; i < input.length; i++) {
       const currentElement = input[i]
-
+  
       if (currentElement === " ") {
-      count = count + 1}
-
+        count++
+      }
     }
-
-    return 
+    return count
   }
 
-export function aufgabe05 (args) {
-  const input = args
-  const result = []
-  
-  for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]}
-
-    if (currentElement === "capitalLetter") {
+  export function aufgabe05 (args) {
+    const input = args
+    
+    for (let i = 0; i < input.length; i++) {
+      const currentAscii = input[i].charCodeAt(0)
+     
+      if (65 <= currentAscii && currentAscii <=90) return true
+      
     }
-
-    if (currentElement.capitalLetter() !== "capitalLetter"){
-      write: "true"
-    }
-
-    if (currentElement.lowerCase() !== "lowerCase") {
-      write: "false"
-    }
-
-
-
-
-
-  return result.join("")
-}
+    return false
+  }
