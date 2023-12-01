@@ -147,3 +147,28 @@ export function aufgabe03 (args) {
     if(input.length !== 1) return null
     return input[0].charCodeAt(0)
   }
+
+  export function aufgabe12 (args) {
+    const input = args
+    
+    for (let i = 0; i < input.length; i++) {
+      const currentElement = input[i]
+  
+      if (currentElement == "e") {
+        return i
+      }
+    }
+    return -1
+  }
+
+  export function aufgabe13 (args) {
+    const input = args
+    let posE = -1
+    for (let i = 0; i < input.length; i++) {
+      const currentElement = input[i]
+       if(currentElement === "e"){
+       posE = i
+     }
+    }
+    return posE
+   }
