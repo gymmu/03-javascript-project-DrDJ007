@@ -130,9 +130,9 @@ export function aufgabe03 (args) {
       const ascii = currentElement.charCodeAt(0)
   
       if(48 <= ascii && ascii <=57) {
-        //Ist eine Ziffer
+        
       } else if (65 <= ascii && ascii <= 70) {
-        //Ist A-F
+        
       } else {
         return false
       }
