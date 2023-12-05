@@ -1,6 +1,6 @@
 export function aufgabe01(args) {
   const input = args
-  const result = []
+  const result = [] 
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
@@ -12,7 +12,7 @@ export function aufgabe01(args) {
       result.push(currentElement)
     }
 
-    
+  
    
   }
   return result.join("")
@@ -52,12 +52,12 @@ export function aufgabe03 (args) {
 
   }
 
-  export function aufgabe04(args) {
-    const input = args
-    let count = 1
+/*   export function aufgabe04(args) {
+   const input = args
+   let count = 1
     
-    for (let i = 0; i < input.length; i++) {
-      const currentElement = input[i]
+   for (let i = 0; i < input.length; i++) {
+     const currentElement = input[i]
   
       if (currentElement === " ") {
         count++
@@ -65,6 +65,18 @@ export function aufgabe03 (args) {
     }
     return count
   }
+
+  export function aufgabe04(text) {
+    // Ersetzt alle Sonderzeichen und Zahlen durch Leerzeichen
+    var words = text.replace(/[0-9]/g, ' ').replace(/[\W_]+/g, ' ');
+    // Teilt den Text in Wörter auf
+    var wordArray = words.split(' ');
+    // Entfernt leere Elemente aus dem Array
+    var filteredWords = wordArray.filter(function(el) { return el; });
+    // Gibt die Anzahl der Wörter zurück
+    return filteredWords.length;
+} */
+
 
   export function aufgabe05(args) {
     const input = args
