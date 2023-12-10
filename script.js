@@ -112,3 +112,122 @@ export function aufgabe07 (args) {
   }
   return false
 }
+
+export function aufgabe08(args) {
+  const input = args        
+  const result = []                     
+
+  for (let i = 0; i < input.length; i++) {      
+    const currentElement = input[i]        
+
+    if (currentElement === "e") {   
+      result.push(3)                                                           
+    } else {                                                 
+      result.push(currentElement)                             
+    }
+  }
+  return result.join("")                                        
+}
+
+export function aufgabe09 (args) {
+  const input = args
+  
+  if(input.length === 6) return true
+  if(input.length <= 6 || 6 <= input.length) return false
+
+}
+
+export function aufgabe10 (args) {
+  const input = args
+  
+  if(input.length !== 7) return false
+  if(input[0] !== "#") return false
+  for (let i = 1; i < input.length; i++) {
+    const currentElement = input[i]
+    const ascii = currentElement.charCodeAt(0)
+
+    if(48 <= ascii && ascii <=57) {
+      
+    } else if (65 <= ascii && ascii <= 70) {
+      
+    } else {
+      return false
+    }
+  }
+
+  return true
+}
+
+export function aufgabe11 (args) {
+  const input = args
+  
+  if(input.length !== 1) return null
+  return input[0].charCodeAt(0)
+}
+
+export function aufgabe12 (args) {
+  const input = args
+  
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+
+    if (currentElement == "e") {
+      return i
+    }
+  }
+  return -1
+}
+
+export function aufgabe13 (args) {
+  const input = args
+  let posE = -1
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+     if(currentElement === "e"){
+     posE = i
+   }
+  }
+  return posE
+ }
+
+ export function aufgabe14 (args) {
+  const input = args
+ let count = 0
+  let posE= -1 
+  for (let i = 0; i < input.length; i++) {
+  const currentElement = input[i]
+  if(currentElement=== "e"){
+   count++
+   if (count === 3) {
+    return i
+   }
+  }
+}
+
+  return posE 
+}
+
+export function aufgabe15 (args) {
+  const input = args
+  const result = []
+
+  if (input.lastIndexOf(' ') == input.length - 1) {
+      for (let i = 0; i < input.length - 1; i++) {
+        const currentElement = input[i]
+        result.push(currentElement)
+      }
+  } else {
+    for (let i = 0; i < input.length; i++) {
+      const currentElement = input[i]
+  
+      if (currentElement !== " ") {
+        result.push(currentElement)
+      } else {
+        return result.join("")
+      }
+    }
+
+  }
+
+  return result.join("")
+}
