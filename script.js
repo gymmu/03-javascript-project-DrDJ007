@@ -293,13 +293,18 @@ export function aufgabe16 (args) {
 export function aufgabe22 (args) {
   const input = args
   const result = []
-  
+  const firstElement = " "
+  const secondElement = "k"
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    if (input[i] !== "k" && input[i+1] !== "i" && input[i+2] !== "e" && input[i+3] !== "r") result.push("_")
 
+    if (currentElement === " ") {
+      result.push("secondElement")
+    }
+    else {
+      result.push(currentElement)
+    }
   }
-
   return result.join("")
 }
 
