@@ -316,6 +316,45 @@ export function aufgabe18 (args) {
   if (inputName.join("") == "" && inputAge.join("") == "") return "Sie heissen" + inputName.join("") + " und sind " + inputAge.join("") + "Jahre alt"
 }
 
+export function aufgabe19 (args) {
+  const input = args
+  const result = []
+  
+for (let i = 0; i < input.length; i++) {
+  const currentElement = input[i]
+  result.push(currentElement)
+  result.push(currentElement)
+}
+
+  return result.join("")
+}
+
+export function aufgabe20 (args) {
+  const input = args
+  const result = []
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === ".") {
+      if (input [i+ 1 ]=== " ")   {
+        return true
+      }
+    } 
+  }
+  return false
+}
+
+export function aufgabe21 (args) {
+  const input = args
+  const result = []
+  
+for (let i = 0; i < input.length; i++) {
+  result.push(input[input.length - 1 - i])
+}
+//dreht den Text um, indem es alle Werte von der länge des Textes abzieht
+  return result.join("")
+}
+
+
 export function aufgabe22 (args) {
   const input = args
   const result = []
