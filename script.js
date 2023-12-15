@@ -289,17 +289,19 @@ export function aufgabe16 (args) {
 export function aufgabe22 (args) {
   const input = args
   const result = []
-  const firstElement = " "
-  const secondElement = "k"
+  let condition = false
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-
-    if (currentElement === " ") {
-      result.push("secondElement")
+    if (currentElement === "k") {
+      condition = true
     }
-    else {
+    //wenn ein "k" im Text ist, wird die Bedingung auf true gesetzt
+    if (condition === true) {
       result.push(currentElement)
+    } else {
+      result.push("_")
     }
+    //so lange die Bedingung nicht auf true ist, wird ein "_" eingefügt
   }
   return result.join("")
 }
