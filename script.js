@@ -120,15 +120,19 @@ export function aufgabe03 (args) {
    
     for (let i = 0; i < input.length; i++) {
       const currentElement = input[i]
-      if(currentElement === "u") {                 //wenn das aktuelle Element ein "u" ist, wird...
-        if(input[i +1] === "n") {                  //wenn das nächste Element ein "n" ist, wird...
+      if(currentElement === "u") {        
+        //falls das Element ein "u" ist, wird geschaut was die folgenden Zeichen sind
+        if(input[i +1] === "n") {         
+        //wenn das nächste Element ein "n" ist, wird geschaut was das nächste Zeichen ist 
           if(input[i + 2] === "d") {               //wenn das dritte Element ein "d" ist, wird...
-            return true                            //... true zurückgegeben
+            return true 
+        //wenn das dritte/letzte Zeichen ein "d" ist, und die Vorzeichen ein "u" als erstes Zeichen und ein "n" als zweites Zeichen sind, wird true zurückgegeben
           }
         }
       }
     }
     return false
+    //wenn die Reihenfolge oder etwas davon nicht zurtrifft, dann gibt false hinaus
   }
 
 export function aufgabe08(args) {
