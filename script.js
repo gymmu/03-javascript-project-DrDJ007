@@ -338,3 +338,36 @@ export function aufgabe24 (args) {
   
   return result.join("")
 }
+
+export function aufgabe27 (args) {
+  const input = args
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i].charCodeAt(0)
+    
+    if (47 >= currentElement || currentElement >= 58) return false
+  }
+  if (input.length < 1) return false
+  return true
+}
+
+
+
+export function bubbleSort(args) {
+  const input = args
+  let result = []
+const list = input.split("") //wandelt den Text in eine Liste um, dies ist notwendig um Zeichen zu sortieren.
+for (let i = 0; i < list.length - 1; i++) {
+  const currentElement = list[i]
+  const nextElement = list[i + 1]
+  if (currentElement.charCodeAt(0) > nextElement.charCodeAt(0)) {
+    //falls die Reihenfolge der Zeichen nicht stimmmt werden die Zeichen vertauscht
+    const tmp = list[i + 1]
+    list[i + 1] = list[i]
+    list[i] = tmp
+    i = -1 //mache alles erneut, falls etwas vertauscht wurde und noch nicht in der richtigen Reihenfolge ist
+  }
+}
+result = list.join("")
+  return result
+}
