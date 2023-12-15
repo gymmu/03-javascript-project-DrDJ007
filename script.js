@@ -7,7 +7,7 @@ export function aufgabe01(args) {
 
     if (currentElement === "e") {
     }
-
+    //zählt alle e's im Text
     if (currentElement.toLowerCase() !== "e"){
       result.push(currentElement)
     }
@@ -16,6 +16,7 @@ export function aufgabe01(args) {
    
   }
   return result.join("")
+  //gibt den gesamten Text ohne e hinaus
   }
 
 
@@ -55,17 +56,18 @@ export function aufgabe03 (args) {
 
   export function aufgabe04(args) {
     let input = args.replace(/[^a-zA-Z0-9 ]/g, "");
-  //entfernt alle Sonderzeichen aus dem Text
+    //entfernt alle Sonderzeichen aus dem Text
     let count = 1;
     if (input.lastIndexOf(' ') == input.length - 1) count--
     if (input[0] == " ") count--
-  
+    //wenn das erste oder das letzte zeichen ein Leerzeichen wird der counter je um 1 nach unten gesetzt
     for (let i = 0; i < input.length; i++) {
       const currentElement = input[i];
   
       if (currentElement === " " && input[i-1] !== " ") {
         count++
       }
+    //wenn das aktuelle Zeichen ein Leerzeichen ist, und das vorherige Zeichen kein Leerzeichen ist, wird der counter um 1 nach oben gesetzt
     }
     return count;
   }
@@ -229,9 +231,11 @@ export function aufgabe13 (args) {
   const currentElement = input[i]
   if(currentElement=== "e"){
    count++
+   //zählt alle e's im Text
    if (count === 3) {
     return i
    }
+   //wenn der Counter momentan 3 ist wird, der aktuelle i wert zurückgegeben
   }
 }
 
@@ -247,6 +251,7 @@ export function aufgabe15 (args) {
         const currentElement = input[i]
         result.push(currentElement)
       }
+      //wenn das letzte Zeichen ein Leerzeichen ist, wird die Schleife um 1 weniger wiederholt damit dieses eine Zeichen nicht mitgezählt wird
   } else {
     for (let i = 0; i < input.length; i++) {
       const currentElement = input[i]
@@ -274,20 +279,25 @@ export function aufgabe16 (args) {
     
     if (currentElement === "$" && readText !== false) {
       readText = false
+      //falls das Zeichen ein $ ist, wird das readText auf false gesetzt
     } else {
       if (readText === true) {
         result1.push(currentElement)
       }
+      //wenn das readText auf true ist, wird das aktuelle Element in das result1 Array gepushed
       else if (readText === false) {
         result2.push(currentElement)
       }
+      //wenn das readText auf false ist, wird das aktuelle Element in das result2 Array gepushed
     }
   }
   if (result2.join("") !== "") {
   return result1.join("") + "," + result2.join("")
+  //wenn result2 nicht leer ist, wird result1 und result2 zusammengerechnet
   } else {
     return result1.join("")
   }
+  //sonst wird nur result1 hinausgegeben
 }
 
 export function aufgabe18 (args) {
@@ -314,6 +324,7 @@ export function aufgabe18 (args) {
   if (inputName.join("") == "" && inputAge.join("") !== "") return "Sie heissen" + inputName.join("") + " und sind " + inputAge.join("") + " Jahre alt"
   if (inputName.join("") !== "" && inputAge.join("") == "") return "Sie heissen " + inputName.join("") + " und sind " + inputAge.join("") + "Jahre alt"
   if (inputName.join("") == "" && inputAge.join("") == "") return "Sie heissen" + inputName.join("") + " und sind " + inputAge.join("") + "Jahre alt"
+  //unterschiedliche Fälle. Dadurch wird ein Problem verhindert, welches es gab, weil es laut Code zu viele Leerzeichen zwischen den Wörtern hat, wenn keine Eingabe vorhanden war
 }
 
 export function aufgabe19 (args) {
@@ -332,15 +343,16 @@ for (let i = 0; i < input.length; i++) {
 export function aufgabe20 (args) {
   const input = args
   const result = []
+  
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    if (currentElement === ".") {
-      if (input [i+ 1 ]=== " ")   {
-        return true
-      }
-    } 
+    if(currentElement == "." && input[i+1] !== " ") return false  
+    //wenn ein "." vor keinem Leerzeichen ist, wird false zurückgegeben
+    else if(currentElement == "." && input[i+1] == " ") return true
+    //wenn ein "." vor einem Leerzeichen ist, wird true zurückgegeben
   }
-  return false
+
+  return result.join("")
 }
 
 export function aufgabe21 (args) {
@@ -350,7 +362,7 @@ export function aufgabe21 (args) {
 for (let i = 0; i < input.length; i++) {
   result.push(input[input.length - 1 - i])
 }
-//dreht den Text um, indem es alle Werte von der länge des Textes abzieht
+//führt die standartschleife umgekehrt aus, damit die Reihenfolge verkehrt wird 
   return result.join("")
 }
 
@@ -380,13 +392,15 @@ export function aufgabe23 (args) {
   const result = []
   
   if (input.length === 0) return input
-
+  //wenn das Eingabefeld leer ist, wird eine leere Eingabe zurückgegeben
   result.push(input[0])
+  //das erste Element wird zum ersten Element der Ausgabe hinzugefügt
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     result.push(currentElement)
   }
   result.push(input[0])
+  //das erste Element wird zum letzten Element der Ausgabe hinzugefügt
   return result.join("")
 }
 
@@ -396,18 +410,20 @@ export function aufgabe24 (args) {
   const result = []
 
   if (input.length === 1) return input
-
+  //wenn das Eingabefeld nur ein Element hat, wird die Zeichen direkt zurück gegeben
   const firstElement = input[0]
   const lastElement = input[input.length - 1]
 
 
   result.push(lastElement)
+  //das letzte Element wird an erster result Potition angehängt
   for (let i = 1; i < input.length - 1; i++) {
     const currentElement = input[i]
     result.push(currentElement)
   }
+  //normale Schleife aber es fängt erst beim 2. Element an und hört schon beim vorletzten Zeichen auf
   result.push(firstElement)
-  
+  //das letzte Element wird zum ersten Element der Ausgabe hinzugefügt
   return result.join("")
 }
 
@@ -418,9 +434,12 @@ export function aufgabe27 (args) {
     const currentElement = input[i].charCodeAt(0)
     
     if (47 >= currentElement || currentElement >= 58) return false
+    //wenn im ganzen Text ein Zeichen nicht zwischen dem bestimmten ascii code bereichs ist, wird false zurückgegeben
   }
   if (input.length < 1) return false
+  //wenn das Eingabefeld leer ist, wird false zurückgegeben
   return true
+  //ansonsten gibt true zurück
 }
 
 
